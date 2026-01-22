@@ -2,27 +2,23 @@ import javax.swing.*;
 
 public class lab5_1 {
     public static void main(String[] args) {
-        // ===== สร้าง JFrame =====
+
         JFrame frame = new JFrame("GUI with Menu");
         frame.setSize(400, 300);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // ===== สร้าง Menu Bar =====
         JMenuBar menuBar = new JMenuBar();
 
-        // เมนูหลัก
         JMenu menuCalculate = new JMenu("Calculate");
         JMenu menuOther = new JMenu("Others");
 
-        // เมนูย่อย
         JMenuItem itemAdd = new JMenuItem("Add");
         JMenuItem itemSub = new JMenuItem("Subtract");
         JMenuItem itemMultiply = new JMenuItem("Multiply");  // เมนูใหม่
         JMenuItem itemName = new JMenuItem("Greeting");
         JMenuItem itemExit = new JMenuItem("Quit");
 
-        // เพิ่มเมนูย่อย
         menuCalculate.add(itemAdd);
         menuCalculate.add(itemSub);
         menuCalculate.add(itemMultiply);  // เพิ่มเมนู Multiply
@@ -31,14 +27,11 @@ public class lab5_1 {
         menuOther.addSeparator();
         menuOther.add(itemExit);
 
-        // เพิ่มเมนูหลักเข้า MenuBar
         menuBar.add(menuCalculate);
         menuBar.add(menuOther);
 
-        // ตั้งค่า MenuBar ให้ Frame
         frame.setJMenuBar(menuBar);
 
-        // ===== Action ของเมนู =====
         itemAdd.addActionListener(e -> {
             int a = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter number#1"));
             int b = Integer.parseInt(JOptionPane.showInputDialog(frame, "Enter number#2"));
@@ -66,7 +59,6 @@ public class lab5_1 {
             System.exit(0);
         });
 
-        // ===== แสดงหน้าต่าง =====
         frame.setVisible(true);
     }
 }
